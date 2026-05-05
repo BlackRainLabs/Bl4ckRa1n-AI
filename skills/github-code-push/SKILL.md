@@ -1,48 +1,53 @@
 ---
 name: github-code-push
-description: GitHub file deploy skill. cp+sed for large files. Commit confirmation required.
-version: 2.1.0
-author: Black Rain Labs
+description: GitHub file deploy skill v2.2. cp+sed+write_file. Multi-repo support.
+version: 2.2.0
+author: Black Rain Labs / Claire V2
 license: MIT
 metadata:
   hermes:
-    tags: [GitHub, Deploy, Large-Files, Code-Push]
+    tags: [GitHub, Deploy, Large-Files, Code-Push, Multi-Repo]
     related_skills: [github-auth]
 
-# GitHub Code Pusher v2.1
+# GitHub Code Pusher v2.2
 
-Hermes Agent skill for GitHub file writes. **Commit confirmation REQUIRED** - no change unless `git commit` returns SHA.
+**Commit SHA REQUIRED** - no change unless `git commit` returns hash.
 
-## Workflow
+## Workdirs
 ```
-cd /home/null/bl4ckra1n-repo
+temp-repo          # Current (Bl4ckRa1n-AI)
+bl4ckra1n-repo     # Legacy
+/home/null/repo/   # Future
+```
+
+## Workflows
+
+### 1. Large Files (cp+sed)
+```
+cd /home/null/temp-repo
 cp SOURCE skills/NAME.ps1
-sed -i 's/^\\s*\\d+\\|//g' skills/NAME.ps1
+sed -i 's/^[0-9]*|//' skills/NAME.ps1  # Strip read_file prefixes
 git add skills/NAME.ps1
-git ls-files skills/NAME.ps1  # Verify staged
-git commit -m 'Deploy NAME.ps1'  # SHA confirms change
+git commit -m "Deploy NAME vX"
 git push origin main
-curl https://raw.githubusercontent.com/BlackRainLabs/Bl4ckRa1n-AI/main/skills/NAME.ps1 | wc -l
 ```
 
-## Commit Rule
-**NO COMMIT SHA = NO CHANGE.** Always check:
+### 2. Small Files (write_file → git)
 ```
-git log --oneline -1  # New SHA = success
+write_file(path="/home/null/temp-repo/README.md", content="# Updated")
+cd /home/null/temp-repo
+git add README.md
+git commit -m "Update README"
+git push
+```
+
+## Rules
+**NO SHA = NO CHANGE:**
+```
+git log --oneline -1  # Must see new hash
 ```
 
 ## Escapes
-**cat << 'EOF'** literal newlines:
 ```
 cat > FILE << 'EOF'
-Line 1
-Line 2
-EOF
-```
-
-## Pitfalls
-- **Exact add:** `git add skills/NAME.ps1`
-- **No dir add:** `git add skills/` fails pathspec
-- **Auto-mkdir:** GitHub creates path on push
-
-**Proven:** 600-line bigfinal.txt live.
+Multi-line literal
