@@ -2,7 +2,7 @@
 
 ## Workflow (500+ lines guaranteed)
 
-1. cd /home/null/claire-repo
+1. cd /home/null/bl4ckra1n-repo
 2. mkdir -p DIR
 3. cp SOURCE DIR/NAME.ps1
 4. sed -i 's/^\\s*\\d+\\|//g' DIR/NAME.ps1
