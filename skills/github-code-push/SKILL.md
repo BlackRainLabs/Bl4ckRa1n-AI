@@ -1,4 +1,5 @@
 # GitHub Code Pusher Skill v1.0
+Hermes Agent skill by **Black Rain Labs**
 
 ## Workflow (500+ lines guaranteed)
 
