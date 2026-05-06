@@ -9,7 +9,7 @@ metadata:
     tags: [GitHub, Deploy, PR, Code-Push, Multi-Repo, Safety]
     related_skills: [github-auth]
 
-# github-code-push
+## github-code-push
 **Version:** 3.1.0
 
 ## Core Rules
