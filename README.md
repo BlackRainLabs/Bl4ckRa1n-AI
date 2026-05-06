@@ -1,5 +1,5 @@
 # BlackRainLabs/Bl4ckRa1n-AI
-Hermes Agent Skills & PowerShell TUI Repo by Claire V2
+Hermes Agent Skills & PowerShell TUI Repo by Bl4ckRa1n-AI
 
 ## 📁 Repository Structure (Verified 2026-05-05)
 ```
@@ -40,4 +40,4 @@ skills/ (9 files, ~1,150 lines):
   * https://raw.githubusercontent.com/BlackRainLabs/Bl4ckRa1n-AI/main/HATUI/HATUI-v2.ps1
   * https://raw.githubusercontent.com/BlackRainLabs/Bl4ckRa1n-AI/main/skills/github-code-push/SKILL.md
 
-**Claire V2 | Black Rain Labs | 2026**
+**Bl4ckRa1n V2 | Black Rain Labs | 2026**
