@@ -1,1 +1,0 @@
-# Bash Commit Message Pitfall Fix\n\n**Problem:** `git commit -m \"OpenClaw (VentureBeat)\"`\n**Fail:** Parens `()` trigger subshell → bash fatal.\n\n**Always:**\n```\ngit commit -m 'Safe msg (parens ok) $vars safe'\n```\n\n**Single quotes prevent expansion.**\n**Double quotes = danger zone.**
