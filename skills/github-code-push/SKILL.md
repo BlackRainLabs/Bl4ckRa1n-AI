@@ -2,7 +2,7 @@
 name: github-code-push
 description: GitHub file deploy skill v3.1. Main-first workflow (PR optional).
 version: 3.1.0
-author: Black Rain Labs / Claire V2 / Drew
+author: Black Rain Labs / Bl4ckRa1n / Drew
 license: MIT
 metadata:
   hermes:
