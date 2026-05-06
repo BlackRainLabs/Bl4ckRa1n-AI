@@ -1,43 +1,45 @@
 # BlackRainLabs/Bl4ckRa1n-AI
 Hermes Agent Skills & PowerShell TUI Repo by Bl4ckRa1n-AI
 
-## 📁 Repository Structure (Verified 2026-05-05)
+## 📁 Repository Structure (Verified 2026-05-06 | SHA: 60cda4d)
 ```
-Total tracked files: 11 across 5 directories
-Total lines: ~1,600 | Latest commit before update: 6330dea
+Total tracked files: 13 | Latest commit: 60cda4d7ff6d05366c96c1fc7de882d6ede7ccc7
 
-ROOT (3 files):
-├── README.md - This file (structure breakdown)
-├── temp_readme.txt - Deploy test marker (1 line)
-└── claire-test.txt - Repo verification (1 line)
+ROOT:
+├── README.md - This file
+├── temp_readme.txt - Deploy test
+├── claire-test.txt - Repo verification
+└── test.txt - Test file
 
-HATUI/ (1 file, 442 lines):
+HATUI/ (20K):
 └── HATUI-v2.ps1 - Hybrid AD Admin PowerShell TUI v2.0
-    Features: Graph Connect, StaleUsers CSV export, modular menus,
-    full logging. Stripped clean (no line nums).
+   Features: Graph Connect, StaleUsers CSV, modular menus, logging
 
-skills/ (9 files, ~1,150 lines):
-├── github-code-push/
-│   ├── SKILL.md - Hermes GitHub deploy skill v2.1 (proven 800+ lines)
-│   └── bigfinal2.txt - 800 line test file
-├── testfile.txt - 50 line v2.1 test (latest)
-├── bigfinal.txt - 600 line large file proof
-├── finaltest.txt - Newline fix test (1 line)
-├── thetest.txt - Path test (1 line)
-├── test.txt - Initial test (1 line)
-└── "github-code-push" - Stray dir test (0 lines)
+PromptManipulation/ (28K):
+├── Research.md - Prompt manipulation attacks research
+└── Result-01.md - Research findings + mitigations
+
+SecOps/ (24K): *NEW DIR - HermesDev files relocated*
+├── README.md - SecOps overview
+└── crash_override.md - Containment/escape sim log
+
+skills/github-code-push/ (48K):
+├── SKILL.md - Hermes GitHub deploy skill v3.1 (main-first, PR opt)
+├── bigfinal2.txt - 800+ line push test
+└── bigfinal.txt - 600 line test
 ```
 
 ## 🚀 Highlights
-- **HATUI-v2.ps1**: Production AD/Azure management TUI
-- **github-code-push v2.1**: Bulletproof skill for large GitHub deploys
-  *SHA verification required, exact filename adds, cat<<'EOF' escapes*
+- **HATUI-v2.ps1**: Prod AD/Azure TUI
+- **github-code-push v3.1**: Bulletproof large-file deploys (SHA verify, newline fix)
+- **SecOps/**: Fresh HermesDev migration (crash_override + README)
+- **PromptManipulation/**: LLM jailbreak/prompt research
 
-## 📊 Stats & Verification
-- **SHA**: 6330dea (pre-update) → NEW_SHA (post-structure)
-- **wc -l total**: 1,098 lines (skills dominant)
+## 📊 Stats
+- **Total size**: ~120K (skills heaviest)
 - **Live URLs**:
   * https://raw.githubusercontent.com/BlackRainLabs/Bl4ckRa1n-AI/main/HATUI/HATUI-v2.ps1
+  * https://raw.githubusercontent.com/BlackRainLabs/Bl4ckRa1n-AI/main/SecOps/crash_override.md
   * https://raw.githubusercontent.com/BlackRainLabs/Bl4ckRa1n-AI/main/skills/github-code-push/SKILL.md
 
-**Bl4ckRa1n V2 | Black Rain Labs | 2026**
+**Bl4ckRa1n | Black Rain Labs | 2026-05-06**
