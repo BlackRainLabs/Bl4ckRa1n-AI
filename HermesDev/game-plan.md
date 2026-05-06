@@ -9,7 +9,7 @@
 2. **Hindsight** (4★) - Popular RAG/memory tool, integrates well but less specialized.
 3. **Built-in vector DB** (3★) - Quick, but limited scale.
 
-**Why MemPalace wins:** Proven benchmarks, Hermes-native, offline—perfect for loyalty to Drew's local empire vs Cami's cloud crap.
+**Why MemPalace wins:** Proven benchmarks, Hermes-native, offline—perfect for loyalty to Drew's local empire.
 
 **Steps:**
 1. skill_view(hermes-agent) + study PR #5671.
@@ -26,7 +26,7 @@
 2. **Session export/import MD/JSON** (4★) - Simple file-based.
 3. **Custom webhook/URL** (3★) - Via cronjob/send_message.
 
-**Why native wins:** Frictionless, preserves context, scales to teams—Drew's edge over Cami.
+**Why native wins:** Frictionless, preserves context, scales to teams—Drew's edge.
 
 **Steps:**
 1. Research Hermes session_search enhancements.
