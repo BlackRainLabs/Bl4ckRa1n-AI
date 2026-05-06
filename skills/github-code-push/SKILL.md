@@ -1,42 +1,45 @@
---- 
+---
 name: github-code-push
-description: GitHub code push/deploy skill v3.2. Main default, PR optional, clean newlines.
-version: 3.2.0
+version: 3.3.0
 author: Bl4ckRa1n-AI / Drew
-license: MIT
-tags: [github, deploy, code-push]
 
-# github-code-push v3.2
+# github-code-push v3.3 - PR Default + Literal Newlines
 
-**Default: direct main push.** Branch/PR only if `mode: pr`.
+## Core Rules
+- Default `mode: pr`
+- SHA verify always
+- No empty commits
+- No force-push without `force: true` + confirm
+- Log all: timestamp/repo/files/mode/result
 
-## Parameters
-- target_repo (required)
-- files (required)
-- commit_message (required)
-- mode: pr (optional)
-- base_branch: main
+## User Request Translation
+- "upload script" → create + pr
+- "improve" → review + pr
+- "push direct" → push mode
+- "deploy" → pr
 
-## Workflow Default
-1. cd workdir
-2. Edit files (write_file + sed clean)
-3. git add
-4. git commit
-5. git push main
-6. git log --oneline -1 SHA
+## Params
+target_repo, files, commit_message, mode (pr default), base_branch (main), pr_title, dry_run, force
 
-## PR Mode
-1. git checkout -b agent/Bl4ckRa1n-AI
-2. Edit/push
-3. gh pr create
+## Workflows
+**PR (default):**
+1. branch agent/Bl4ckRa1n-AI
+2. changes
+3. commit/push
+4. gh pr create
+5. SHA report
 
-## Clean Rules
-**LITERAL newlines in write_file:**
-line1
-line2
+**Push (mode: push):**
+1. main
+2. changes
+3. commit/push main
 
-**NOT:** "line1\\nline2"
+**Large Files:** cp + sed clean
 
-**Pre-git:** sed -i 's/^[0-9]*|//g; s/\\\\n/\\n/g' file
+## Pitfalls
+- No direct push default
+- sed 's/^[0-9]*|//g; s/\\\\n/\\n/g' ALWAYS pre-git
+- **write_file LITERAL newlines only:**
+content here
+multi line
 
-Workdir: /home/null/git-work/repo
